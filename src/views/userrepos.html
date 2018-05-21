@@ -1,0 +1,27 @@
+<div>
+        <h2>Repos:</h2>
+        Order:
+        <select ng-model="sortReposBy">
+            <option value="+name">Name</option>
+            <option value="-languaje">Languaje</option>
+            <option value="+description">Description</option>
+
+
+        </select>
+        <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Languaje</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="repo in repos | orderBy:sortReposBy">
+                <th>{{repo.name}}</th>
+                <th>{{repo.language}}</th>
+                <th>{{repo.description}}</th>
+            </tr>
+        </tbody>
+    </table>
+    </div>

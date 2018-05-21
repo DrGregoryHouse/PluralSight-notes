@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="githubViewer">
+<head>
+    <title>GitHub Library</title>
+</head>
+<body ng-controller="getUserController">
+    <h1>Github Viewer</h1>
+    <form name="searchUser" ng-submit="search(username)">
+        <input type="search" placeholder="Username for search" ng-model="username">
+        <input type="submit" value="Search">
+    </form>
+    <div ng-include="'views/userdetails.html'" ng-show="user"></div>
+    <div ng-include="'views/userrepos.html'" ng-show="user"></div>
+    
+    <script src="script/angular.js"></script>
+    <script src="script/app.js"></script>
+</body>
+</html>
