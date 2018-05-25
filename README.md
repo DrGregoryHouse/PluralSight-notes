@@ -1,6 +1,6 @@
 # PluralSight-notes
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/JulCesMelPin/surveyApp-BackEnd?branch=master)](https://bettercodehub.com/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/JesusDeVeracruz/PluralSight-notes?branch=master)](https://bettercodehub.com/)
 
 Collection of Pluralsight notes on the AngularJS path.
 
@@ -8,20 +8,18 @@ Collection of Pluralsight notes on the AngularJS path.
 <details>
 <!-- toc -->
 
-- [Description](#description)
-- [Routes](#routes)
-- [Install](#install)
+- [GetStarted](#GetStarted)
+- [Fundamentals](#Fundamentals)
+- [TheBigPicture](#TheBigPicture)
 
 </details>
 
-## Description
+## Get Started
 
+Web application that use __GitHub API__. 
 
+## Fundamentals
 
+## TheBigPicture
 
-## Routes
-
-
-
-This is a Web Application for learning AngularJS components using GitHub API inspired on the PluralSight Course: __AngularJS: Get Started__
 
