@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="githubViewer">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Github WebApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css" />
+</head>
+
+<body ng-controller="MainController as ctrl">
+    <div>
+        <h1>
+            GitHub Viewer
+            <img src="https://assets-cdn.github.com/images/icons/emoji/octocat.png?v8">
+        </h1>
+    </div>
+    <div>
+        <form ng-submit="search(username)">
+            <label>Search for a Github User:</label>
+            <br>
+            <input type="text" ng-model="username" required placeholder="Enter username for search...">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <hr>
+    <!-- <div ng-include="./views/user_info.html"></div> -->
+    <div>
+        <h3>{{user.login}}</h3>
+        <img ng-src="{{user.avatar_url}}" alt="UserImgen" height=100>
+        <ul>
+            <li>Name: {{user.name}}
+                <a href="{{user.html_url}}">(view on github)</a>
+            </li>
+            <li>Company: {{user.company}}</li>
+            <li>Location: {{user.location}}</li>
+        </ul>
+    </div>
+
+    <script src="./lib/angular.min.js"></script>
+    <script src="./script/main.js"></script>
+</body>
+
+</html>
