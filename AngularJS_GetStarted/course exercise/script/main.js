@@ -1,38 +1,23 @@
-(function(){
-
-var app = angular.module('githubViewer', []);
-
-var MainController = function ($scope, $http) {
-
-    var url = "https://api.github.com/";
-    var item = "users/";
-    var username = "jmelchorp";
-
-    var onUserComplete = function (response) {
-        $scope.user = response.data;
+(function () {
+    var app = angular.module('githubViewer', []);
+    var MainController = function ($scope, $http) {
+        var url = "https://api.github.com/users/";
+        var username = "angular/";
+        var onUserComplete = function (response) {
+            $scope.user = response.data;
+            $http.get($scope.user.repos_url)
+                .then(onRepos, onError);
+        };
+        var onRepos = function (response) {
+            $scope.repos = response.data;
+        };
+        var onError = function (reason) {
+            $scope.error = "Could not fetch data.";
+        };
+        $scope.search = function (username) {
+            $http.get(url + username)
+                .then(onUserComplete, onError);
+        };
     };
-
-    var onError = function (reason) {
-        $scope.error = "Could not fetch user.";
-    };
-
-    var getGithubUser = function(user) {
-        var url = "https://api.github.com/";
-        var item = "users/";
-        $http.get(url+item+user).then(onUserComplete, onError);
-    };
-
-    $scope.search = function(username){
-        getGithubUser(username);
-    };
-
-    var defaultUser = function(){
-        getGithubUser('jmelchorp')
-    }
-    
-    defaultUser();
-
-};
-app.controller("MainController", ["$scope", "$http", MainController])
-
+    app.controller("MainController", ["$scope", "$http", MainController])
 }());
